@@ -8,5 +8,7 @@ out vec4 outCol;
 void main()
 {
     outCol = texture(sprite, fragUV);
-    if (outCol.a > ALPHA_TEST_VAL) outCol.a = ALPHA_TEST_VAL;
+    // Avoid conditionals for speed 
+    //if (outCol.a > ALPHA_TEST_VAL) outCol.a = ALPHA_TEST_VAL;
+    outCol.a = min(outCol.a, ALPHA_TEST_VAL);
 }
