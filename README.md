@@ -3,7 +3,7 @@
 ## General tips
 - Avoid conditional branching in shaders where possible for speed
 - Passing a transform offset to a shader to adjust vertex position is more efficient than recreating the object each frame
-- Use `mix()` for vector math instead of `(a + b)/2`
+- Use `mix(a, b, 1/n)` where applicable instead of `(a + b)/n`
 - Use `min()` and `max()` wherever possible
 - `discard` tosses a fragment completely
 - Use `MAD` operations when available (Multiply And Add, `(a*b)+c` is very efficient on GPUs)
