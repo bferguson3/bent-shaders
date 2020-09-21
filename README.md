@@ -11,7 +11,7 @@
 # Vertex Shaders
 
 ## spritesheet.vs 
-Renders quad at uniform size and position
+Renders segment of texture at uniform size and position
 
 ## uv_passthrough_scroll.vs
 UV texture passthru offset by time
