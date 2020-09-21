@@ -14,6 +14,7 @@
 3. scale
 ```
 to ensure column-major matrix math works properly.
+- `ceil()`, `inverse()`, `length()`, `distance()`, `noise()`, `pow()`, `degrees()` are common. Unfortunately handy GLM functions like translate() and rotate() are not available within the shader.
 
 # Vertex Shaders
 
