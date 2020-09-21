@@ -6,7 +6,7 @@
 - Use `mix(a, b, 1/n)` where applicable instead of `(a + b)/n`
 - Use `min()` and `max()` wherever possible
 - `discard` tosses a fragment completely
-- Use `MAD` operations when available (Multiply And Add, `(a*b)+c` is very efficient on GPUs)
+- Use `MAD` operations when available (Multiply And Add, `(a*b)+c` is very efficient on GPUs). In GLSL 4.0+ this can be done using `fma(a, b, c)`
 - Order of operations matters especially in matrix math. ALWAYS perform operations in order of:<br>
 ```
 1. translate
