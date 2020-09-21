@@ -7,6 +7,9 @@ out vec2 fragUV;
 
 void main()
 {
-    gl_Position = vec4(pos, 1.0);
+    vec3 scale = vec3(1.0, 1.0, 1.0);
+    vec3 translation = vec3(0.0, 0.0, 0.0);
+    // MAD: Multiply + add is very fast on GPU
+    gl_Position = vec4( (pos * scale) + translation, 1.0);
     fragUV = vec2(uv.x, 1.0-uv.y);
 }
