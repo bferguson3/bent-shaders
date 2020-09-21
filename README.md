@@ -7,6 +7,13 @@
 - Use `min()` and `max()` wherever possible
 - `discard` tosses a fragment completely
 - Use `MAD` operations when available (Multiply And Add, `(a*b)+c` is very efficient on GPUs)
+- Order of operations matters especially in matrix math. ALWAYS perform operations in order of:<br>
+```
+1. translate
+2. rotate
+3. scale
+```
+to ensure column-major matrix math works properly.
 
 # Vertex Shaders
 
