@@ -3,10 +3,18 @@
 ## General tips
 - Avoid conditional branching in shaders where possible for speed
 - Passing a transform offset to a shader to adjust vertex position is more efficient than recreating the object each frame
-- Use `mix()` for vector math instead of `(a + b)/2`
+- Use `mix(a, b, 1/n)` where applicable instead of `(a + b)/n`
 - Use `min()` and `max()` wherever possible
 - `discard` tosses a fragment completely
-- Use `MAD` operations when available (Multiply And Add, `(a*b)+c` is very efficient on GPUs)
+- Use `MAD` operations when available (Multiply And Add, `(a*b)+c` is very efficient on GPUs). In GLSL 4.0+ this can be done using `fma(a, b, c)`
+- Order of operations matters especially in matrix math. ALWAYS perform operations in order of:<br>
+```
+1. translate
+2. rotate
+3. scale
+```
+to ensure column-major matrix math works properly.
+- `ceil()`, `inverse()`, `length()`, `distance()`, `noise()`, `pow()`, `degrees()` are common. Unfortunately handy GLM functions like translate() and rotate() are not available within the shader.
 
 # Vertex Shaders
 
